@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar id="barra1">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title size="large"class="centered-and-colored-title">SENA</ion-title>
+
+
+  </ion-toolbar>
+</ion-header>
+
+  <ion-toolbar id="barra2">
+    <ion-buttons>
+      <ion-button size="small" id="boton1">FORMACIÓN</ion-button>
+      <ion-button size="small" id="boton2">COORDINACIÓN</ion-button>
+      <ion-button size="small" id="boton3">NOVEDADES</ion-button>
+    </ion-buttons>
+    
+    
+    <ion-title id="Noticias">Noticias</ion-title>
+    <br>
+  </ion-toolbar>
+
+  <ion-content>
+
+  <ion-card *ngFor="let noticia of noticias; let i = index" (click)="verDetalleNoticia(i)">
+    <ion-card-header>
+      <ion-img [src]="noticia.url_imag"></ion-img>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-title class="colored-title">{{ noticia.title }}</ion-card-title>
+      <br>
+
+     <ion-text class="colored-text"> {{ noticia.text_small }}</ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
